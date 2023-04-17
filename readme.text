@@ -1,0 +1,47 @@
+<-----------------------ReadMe--------------------------------->
+
+CREATE TABLE `posts` (
+ `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+ `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+ `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+ `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+ `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+<-------------------------------------------------------------->
+
+POST - http://localhost/php-crud-api/insert.php
+Payload:
+{
+    "title":"Post Title",
+    "body":"Post Body",
+    "author":"Author Name"
+}
+
+<-------------------------------------------------------------->
+
+GET - http://localhost/php-crud-api/read.php
+
+<-------------------------------------------------------------->
+
+GET - http://localhost/php-crud-api/read.php?id={post_id}
+
+<-------------------------------------------------------------->
+
+PUT - http://localhost/php-crud-api/update.php
+Payload:
+{
+    "id":"post_id",
+    "field_name (title, author, body)":"New value"
+}
+
+<-------------------------------------------------------------->
+
+DELETE - http://localhost/php-crud-api/delete.php
+
+{
+    "id":"post_id",
+}
+
+sumber pembelajaran https://www.w3jar.com
